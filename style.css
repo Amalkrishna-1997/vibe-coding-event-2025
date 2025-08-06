@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(270deg, #2b5876, #4e4376);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: pulseText 2s infinite;
+}
+
+@keyframes pulseText {
+  0%, 100% { color: #ffeb3b; }
+  50% { color: #ffffff; }
+}
+
+#status {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.player-inputs input {
+  padding: 0.7rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.player-inputs button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #ff5722;
+  color: white;
+  border-radius: 10px;
+  transition: transform 0.2s, background 0.4s;
+  box-shadow: 0 0 15px rgba(255,87,34,0.6);
+}
+
+.player-inputs button:hover {
+  transform: scale(1.1);
+  background-color: #e64a19;
+}
+
+.game-area {
+  margin-top: 2rem;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+.player {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 20px;
+  width: 250px;
+  transition: transform 0.3s;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  animation: glowBox 3s infinite alternate;
+}
+
+@keyframes glowBox {
+  from {
+    box-shadow: 0 0 15px #ffffff44;
+  }
+  to {
+    box-shadow: 0 0 25px #ffeb3b99;
+  }
+}
+
+.choice {
+  font-size: 4rem;
+  transition: transform 0.3s;
+}
+
+.choice.animated {
+  animation: pop 0.4s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.vs {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f44336;
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.winner-animation {
+  font-size: 2rem;
+  margin-top: 1rem;
+  height: 40px;
+  animation: fadeIn 1s;
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
